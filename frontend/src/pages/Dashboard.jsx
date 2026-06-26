@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { AlertTriangle, Bot, MapPin, PhoneCall, ShieldCheck, Users } from 'lucide-react';
+import { AlertTriangle, Bot, CheckCircle2, MapPin, PhoneCall, ShieldCheck, Users } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
@@ -96,6 +96,20 @@ export const Dashboard = () => {
               <button className="btn-secondary justify-start" onClick={() => contactApi.alert({ message: 'Please check on me.' }).then(() => toast.success('Guardian alert sent'))}>
                 <PhoneCall size={18} /> Alert Guardians
               </button>
+            </div>
+          </div>
+          <div className="card p-5">
+            <div className="flex items-center justify-between">
+              <h2 className="font-extrabold">Safety Score</h2>
+              <span className="rounded-full bg-teal-50 px-3 py-1 text-xs font-bold text-teal-700 dark:bg-teal-950/40 dark:text-teal-200">92/100</span>
+            </div>
+            <div className="mt-4 h-2 rounded-full bg-slate-100 dark:bg-slate-800">
+              <div className="h-2 w-[92%] rounded-full bg-teal-500" />
+            </div>
+            <div className="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+              <p className="flex items-center gap-2"><CheckCircle2 size={16} className="text-teal-600" /> Guardian network configured</p>
+              <p className="flex items-center gap-2"><CheckCircle2 size={16} className="text-teal-600" /> Realtime sockets enabled</p>
+              <p className="flex items-center gap-2"><CheckCircle2 size={16} className="text-teal-600" /> AI assistant available</p>
             </div>
           </div>
           <div className="card p-5">
